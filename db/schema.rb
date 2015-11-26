@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119090959) do
+ActiveRecord::Schema.define(version: 20151126133825) do
 
   create_table "faculties", force: :cascade do |t|
     t.string   "name"
@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 20151119090959) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "scaffolds", force: :cascade do |t|
-    t.string   "faculty"
-    t.string   "name"
-    t.integer  "code"
+  create_table "people", force: :cascade do |t|
+    t.string   "username"
+    t.string   "firstname"
+    t.string   "lastname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20151119090959) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "faculty_id"
+    t.integer  "author_id"
   end
 
   add_index "theses", ["faculty_id"], name: "index_theses_on_faculty_id"

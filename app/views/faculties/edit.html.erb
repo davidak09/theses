@@ -1,6 +1,8 @@
 <h1>Editing Faculty</h1>
 
-<%= render 'form' %>
+<div class="btn-group">
+  <%= link_to 'Back', faculties_path, class: 'btn btn-default' %>
+  <%= link_to 'Show', @faculty, class: 'btn btn-success' %>
+</div>
 
-<%= link_to 'Show', @faculty %> |
-<%= link_to 'Back', faculties_path %>
+<%= render 'form' %>

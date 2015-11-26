@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Thesis <%= @faculty.id %></h1>
+
+<div class="btn-group">
+  <%= link_to 'Back', theses_path, class: 'btn btn-default' %>
+  <%= link_to 'Edit', edit_faculty_path(@faculty), class: 'btn btn-primary' %>
+</div>
+
 <p>
   <strong>Name:</strong>
   <%= @faculty.name %>
@@ -9,6 +16,3 @@
   <strong>Code:</strong>
   <%= @faculty.code %>
 </p>
-
-<%= link_to 'Edit', edit_faculty_path(@faculty) %> |
-<%= link_to 'Back', faculties_path %>

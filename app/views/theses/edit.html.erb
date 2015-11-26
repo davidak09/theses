@@ -1,6 +1,8 @@
 <h1>Editing Thesis</h1>
 
-<%= render 'form' %>
+<div class="btn-group">
+  <%= link_to 'Back', theses_path, class: 'btn btn-default' %>
+  <%= link_to 'Show', @thesis, class: 'btn btn-success' %>
+</div>
 
-<%= link_to 'Show', @thesis %> |
-<%= link_to 'Back', theses_path %>
+<%= render 'form' %>

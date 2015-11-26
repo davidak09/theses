@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Thesis <%= @thesis.id %></h1>
+
+<div class="btn-group">
+  <%= link_to 'Back', theses_path, class: 'btn btn-default' %>
+  <%= link_to 'Edit', edit_thesis_path(@thesis), class: 'btn btn-primary' %>
+</div>
+
 <p>
   <strong>Title:</strong>
   <%= @thesis.title %>
@@ -20,5 +27,7 @@
   <%= @thesis.faculty.try!(:name) %>
 </p>
 
-<%= link_to 'Edit', edit_thesis_path(@thesis) %> |
-<%= link_to 'Back', theses_path %>
+<p>
+  <strong>Author:</strong>
+  <%= @thesis.author.try!(:username) %>
+</p>

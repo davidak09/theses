@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Person <%= @person.id %></h1>
+
+<div class="btn-group">
+  <%= link_to 'Back', people_path, class: 'btn btn-default' %>
+  <%= link_to 'Edit', edit_person_path(@person), class: 'btn btn-primary' %>
+</div>
+
+<p>
+  <strong>Username:</strong>
+  <%= @person.username %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @person.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @person.lastname %>
+</p>
+
+<p>
+  <strong>Author of theses:</strong>
+</p>
+<ul>
+  <% @person.theses.each do |thesis| %>
+      <li><%= link_to thesis.title, thesis %></li>
+  <% end %>
+</ul>

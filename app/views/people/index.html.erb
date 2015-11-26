@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing People</h1>
+
+<div class="btn-group">
+  <%= link_to 'New Person', new_person_path, class: 'btn btn-success' %>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @people.each do |person| %>
+      <tr>
+        <td><%= person.username %></td>
+        <td><%= person.firstname %></td>
+        <td><%= person.lastname %></td>
+        <td>
+          <%= link_to(person, class: 'btn btn-primary') do %>
+              <span class="glyphicon glyphicon-eye-open"></span> Show
+          <% end %>
+          <%= link_to(edit_person_path(person), class: 'btn btn-warning') do %>
+              <span class="glyphicon glyphicon-edit"></span> Edit
+          <% end %>
+          <%= link_to(person, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger') do %>
+              <span class="glyphicon glyphicon-trash"></span> Remove
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
